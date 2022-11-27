@@ -34,7 +34,7 @@ machine, the following instructions will guide you.
 <code>No valid Python interpreter found. For `pants_version = "2.16.0.dev0"`, Pants requires Python 3.7, 3.8, or 3.9 to run. Please check that a valid interpreter is installed and on your $PATH.</code>
 * We need to install a Python interpreter that Pants can work with.
 
-### Installing Additional Python Interpreters on Linux
+## Installing Additional Python Interpreters on Linux
 
 * See [here](https://hackersandslackers.com/multiple-python-versions-ubuntu-20-04/) for details.
 * Ubuntu depends on its default Python installation so you can’t remove or replace it.
@@ -56,6 +56,6 @@ machine, the following instructions will guide you.
 <code>ModuleNotFoundError: No module named 'distutils.util'</code>
 * Fix with: <strong><code>sudo apt install python3.9-distutils</code></strong>
 
-### Notes
+## Notes
 
 * There are [reasons to consider using WSL 1](https://learn.microsoft.com/en-us/windows/wsl/compare-versions#exceptions-for-using-wsl-1-rather-than-wsl-2) rather than WSL 2.
