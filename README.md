@@ -3,7 +3,10 @@ Code Examples From the Book "Rethinking Objects"
 
 This repository uses the Pants build system, which runs under Linux. If you are
 either running on MacOS or Linux, you're ready to use this repository if you
-know how to use the terminal on those systems.
+know how to use the Linux terminal on those systems (although you might still
+need to install additional Python interpreters, described later in this README).
+
+We are using Pants version 2 here; there are differences in the commands from Pants V1.
 
 ## Windows Setup
 
@@ -57,5 +60,7 @@ machine, the following instructions will guide you.
 * Fix with: <strong><code>sudo apt install python3.9-distutils</code></strong>
 
 ## Notes
+
+* If you want to know more about Pants, their documentation is [here](https://www.pantsbuild.org/first_tutorial.html.)
 
 * There are [reasons to consider using WSL 1](https://learn.microsoft.com/en-us/windows/wsl/compare-versions#exceptions-for-using-wsl-1-rather-than-wsl-2) rather than WSL 2.
