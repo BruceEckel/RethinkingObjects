@@ -15,8 +15,8 @@ machine, the following instructions will guide you.
 
 ### Installing WSL on Windows 10 from the MS Store
 
-- (Not starting with wsl command-line commands)
-- Inside the MS Store, find Ubuntu 22.04.1 LTS, click the "get" button
+- (Assuming there is no prior WSL on your system).
+- Inside the MS Store, find Ubuntu 22.04.1 LTS, click the "get" button.
 - Upon clicking the "Open" button after installing from the MS Store, you will
   see:
 - `Error: 0x800701bc WSL 2 requires an update to its kernel component. For
@@ -32,16 +32,23 @@ machine, the following instructions will guide you.
 - Now when you start Ubuntu it should be successful, and will ask for a username and password.
 - As per the suggestion, run **`wsl.exe --update`**
 - Double check your OS version by running **`lsb_release -a`**
-- Now try this [getting-started tutorial for Pants](https://semaphoreci.com/blog/building-python-projects-with-pants). (Note that there are some commands in the tutorial that have small mistakes but Pants will help you correct the issues).  You will run into the following problem:
-- The default interpreter for Ubuntu 22.04.1 is Python 3.10.6, so trying to run Pants produces: \
-`No valid Python interpreter found. For `pants_version = "2.16.0.dev0"`, Pants requires Python 3.7, 3.8, or 3.9 to run. Please check that a valid interpreter is installed and on your $PATH.`
+- Now try this [getting-started tutorial for
+  Pants](https://semaphoreci.com/blog/building-python-projects-with-pants). This
+  was written for Pants V1, so there are some commands in the tutorial that have
+  small mistakes but Pants V2 will help you correct the issues).  You will run
+  into the following problem:
+- The default interpreter for Ubuntu 22.04.1 is Python 3.10.6, so trying to run
+  Pants produces: \
+`No valid Python interpreter found. For pants_version = "2.16.0.dev0", Pants requires Python 3.7, 3.8, or 3.9 to run. Please check that a valid interpreter is installed and on your $PATH.`
 - We need to install a Python interpreter that Pants can work with.
 
-## Installing Additional Python Interpreters on Linux
+## Installing Additional Python Interpreters
 
 - See [here](https://hackersandslackers.com/multiple-python-versions-ubuntu-20-04/) for details.
-- Ubuntu depends on its default Python installation so you can't remove or replace it.
-- Note: If you have problems connecting to repos, make sure your VPN is turned off
+- Ubuntu depends on its default Python installation so you can't remove or
+  replace it.
+- Note: If you have problems connecting to repos, make sure your VPN is turned
+  off.
 - The "deadsnakes" repository was the one used in all the posts I found.
 - **`sudo add-apt-repository ppa:deadsnakes/ppa`**
 - **`sudo apt update`**
@@ -49,11 +56,12 @@ machine, the following instructions will guide you.
 - **`apt list | grep python3.9`**
 - Install it:
 - **`sudo apt install python3.9`**
-- You only need to add it to `$PATH`. No need to use `update-alternatives`.
+- We only need to add it to `$PATH`. No need to use `update-alternatives`.
 - If you run **`which python3.9`**, you should see `/usr/bin/python3.9`
-- Add the path for python3.9 to the `$PATH` variable. Open the file with **`code ~/.bashrc`** and add this to the end:
+- Add the path for python3.9 to the `$PATH` variable. Open the file with
+  **`code ~/.bashrc`** and add this to the end:
 - **`export PATH="$PATH/usr/bin/python3.9"`**
-- Either **`source ~/.bashrc`** or start a new bash shell
+- Either **`source ~/.bashrc`** or start a new bash shell.
 - **`echo $PATH`** to verify it's at the end.
 - Now when you run Pants you may get a new error: \
 `ModuleNotFoundError: No module named 'distutils.util'`
