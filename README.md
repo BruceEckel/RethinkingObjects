@@ -60,7 +60,7 @@ machine, the following instructions will guide you.
 - If you run **`which python3.9`**, you should see `/usr/bin/python3.9`
 - Add the path for python3.9 to the `$PATH` variable. Open the file with
   **`code ~/.bashrc`** and add this to the end:
-- `export PATH="$PATH/usr/bin/python3.9"`
+- `export PATH="$PATH:/usr/bin/python3.9"`
 - Either **`source ~/.bashrc`** or start a new bash shell.
 - **`echo $PATH`** to verify it's at the end.
 - Now when you run Pants you may get a new error: \
@@ -69,6 +69,6 @@ machine, the following instructions will guide you.
 
 ## Notes
 
-- If you want to know more about Pants, their documentation is [here](https://www.pantsbuild.org/first_tutorial.html.)
+- If you want to know more about Pants, their documentation is [here](https://www.pantsbuild.org/docs).
 
 - There are [reasons to consider using WSL 1](https://learn.microsoft.com/en-us/windows/wsl/compare-versions#exceptions-for-using-wsl-1-rather-than-wsl-2) rather than WSL 2.
