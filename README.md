@@ -16,19 +16,19 @@ machine, the following instructions will guide you.
 ### Installing WSL on Windows 10 from the MS Store
 
 - (Not starting with wsl command-line commands)
-- Inside the MS Store, find Ubuntu 22.04.1 LTS, click the “get” button
-- Upon clicking the “Open” button after installing from the MS Store, you will
+- Inside the MS Store, find Ubuntu 22.04.1 LTS, click the "get" button
+- Upon clicking the "Open" button after installing from the MS Store, you will
   see:
 - `Error: 0x800701bc WSL 2 requires an update to its kernel component. For
   information please visit
   [https://aka.ms/wsl2kernel](https://aka.ms/wsl2kernel)`
 - Follow the instructions at the link to install the update.
-- Opening Ubuntu again produces a “virtual disk system limitation” error.
+- Opening Ubuntu again produces a "virtual disk system limitation" error.
 - To fix this, open the Windows File Explorer and navigate to:
 - **`C:\Users\YOUR_USER\AppData\Local\Packages\CanonicalGroupLimited...`**
-- Right click on “LocalState”, then “Properties,” then “Advanced.”
-- Ensure “Compress contents to save disk space” and “Encrypt contents to secure data” are both **de**selected.
-- Click “OK,” then “Apply,” then “Apply changes to this folder only.”
+- Right click on "LocalState", then "Properties," then "Advanced."
+- Ensure "Compress contents to save disk space" and "Encrypt contents to secure data" are both **de**selected.
+- Click "OK," then "Apply," then "Apply changes to this folder only."
 - Now when you start Ubuntu it should be successful, and will ask for a username and password.
 - As per the suggestion, run **`wsl.exe --update`**
 - Double check your OS version by running **`lsb_release -a`**
@@ -40,21 +40,21 @@ machine, the following instructions will guide you.
 ## Installing Additional Python Interpreters on Linux
 
 - See [here](https://hackersandslackers.com/multiple-python-versions-ubuntu-20-04/) for details.
-- Ubuntu depends on its default Python installation so you can’t remove or replace it.
+- Ubuntu depends on its default Python installation so you can't remove or replace it.
 - Note: If you have problems connecting to repos, make sure your VPN is turned off
-- The “deadsnakes” repository was the one used in all the posts I found.
+- The "deadsnakes" repository was the one used in all the posts I found.
 - **`sudo add-apt-repository ppa:deadsnakes/ppa`**
 - **`sudo apt update`**
-- We’ll look for Python 3.9:
+- We'll look for Python 3.9:
 - **`apt list | grep python3.9`**
 - Install it:
 - **`sudo apt install python3.9`**
-- Let’s try just adding it to `$PATH` without messing with `update-alternatives`
+- Let's try just adding it to `$PATH` without messing with `update-alternatives`
 - If you run **`which python3.9`**, you should see `/usr/bin/python3.9`
 - Edit it into the $PATH: **`code ~/.bashrc `**and add this at the end of the file:
 - **`export PATH="$PATH/usr/bin/python3.9"`**
-- Either **`source ~/.bashrc`** or start a new bash shell
-- **`echo $PATH`** to verify it’s at the end.
+- Either **```source ~/.bashrc```** or start a new bash shell
+- **`echo $PATH`** to verify it's at the end.
 - Now when you run Pants you may get a new error: \
 `ModuleNotFoundError: No module named 'distutils.util'`
 - Fix with: **`sudo apt install python3.9-distutils`**
