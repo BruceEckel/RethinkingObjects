@@ -72,3 +72,15 @@ machine, the following instructions will guide you.
 - If you want to know more about Pants, their documentation is [here](https://www.pantsbuild.org/docs).
 
 - There are [reasons to consider using WSL 1](https://learn.microsoft.com/en-us/windows/wsl/compare-versions#exceptions-for-using-wsl-1-rather-than-wsl-2) rather than WSL 2.
+
+## Windows 11
+- After installing throught the Windows Store as above, when you click the "Open" button you may see:
+```
+Installing, this may take a few minutes...
+WslRegisterDistribution failed with error: 0x8007019e
+The Windows Subsystem for Linux optional component is not enabled. Please enable it and try again.
+See https://aka.ms/wslinstall for details.
+```
+- Open a Powershell window in System Administrator mode. Run **`wsl --install`**
+- It will perform a number of operations and then produce the message: `The requested operation is successful. Changes will not be effective until the system is rebooted.`
+- Reboot the computer.
