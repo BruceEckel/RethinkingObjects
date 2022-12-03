@@ -83,4 +83,5 @@ See https://aka.ms/wslinstall for details.
 ```
 - Open a Powershell window in System Administrator mode. Run **`wsl --install`**
 - It will perform a number of operations and then produce the message: `The requested operation is successful. Changes will not be effective until the system is rebooted.`
-- Reboot the computer.
+- Reboot the computer. Note that if you have Windows updates pending you might have to reboot more than once before WSL is enabled.
+- Open an Ubuntu shell from the Windows terminal.
