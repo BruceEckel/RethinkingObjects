@@ -12,6 +12,7 @@ On Windows, Pants only runs under Windows Subsystem for Linux (WSL). (_They are 
 machine, the following instructions will guide you.
 
 ## Installing WSL on Windows 10
+- First, install all pending Windows updates.
 - Inside the Microsoft Store, find Ubuntu 22.04.1 LTS. Click the "get" button.
 - Upon clicking the "Open" button after installing from the MS Store, you will
   see:
