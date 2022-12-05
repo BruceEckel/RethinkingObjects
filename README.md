@@ -67,6 +67,7 @@ In either case, follow the instructions at the given URL.
 - The "deadsnakes" repository was the one used in all the posts I found.
 - **`sudo add-apt-repository ppa:deadsnakes/ppa`**
 - **`sudo apt update`**
+- **`sudo apt-get upgrade`**
 - We'll look for Python 3.9:
 - **`apt list | grep python3.9`**
 - Install it:
