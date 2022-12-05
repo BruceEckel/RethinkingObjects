@@ -39,16 +39,19 @@ machine, the following instructions will guide you.
 - We need to install a Python interpreter that Pants can work with. See "Installing Additional Python Interpreters," below.
 
 ##  Installing WSL on Windows 11
-- After installing through the Windows Store as described for Windows 10 (above), when you click the "Open" button you may see:
+- After installing through the Windows Store as described for Windows 10 (above), when you click the "Open" button you may see either of these messages:
 ```
-Installing, this may take a few minutes...
 WslRegisterDistribution failed with error: 0x8007019e
 The Windows Subsystem for Linux optional component is not enabled. Please enable it and try again.
 See https://aka.ms/wslinstall for details.
 ```
-- Open a Powershell window in System Administrator mode. Run **`wsl --install`**
-- It will perform a number of operations and then produce the message: `The requested operation is successful. Changes will not be effective until the system is rebooted.`
-- Reboot the computer. Note that if you have Windows updates pending you might have to reboot more than once before WSL is enabled.
+Or
+```
+WslRegisterDistribution failed with error: 0x800701bc
+Error: 0x800701bc WSL 2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel
+```
+In either case, follow the instructions at the given URL.
+- You might need to reboot the computer. Note that if you have Windows updates pending you might have to reboot more than once before WSL is enabled.
 - Open an Ubuntu shell from the Windows terminal.
 - At this writing, the default Python installed with Ubuntu 22.04.1 is version 3.10.6. To run Pants, you will need to add Python 3.9, described in the next section.
 
