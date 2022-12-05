@@ -39,6 +39,7 @@ machine, the following instructions will guide you.
 - We need to install a Python interpreter that Pants can work with. See "Installing Additional Python Interpreters," below.
 
 ##  Installing WSL on Windows 11
+- First, install all pending Windows updates.
 - After installing through the Windows Store as described for Windows 10 (above), when you click the "Open" button you may see either of these messages:
 ```
 WslRegisterDistribution failed with error: 0x8007019e
