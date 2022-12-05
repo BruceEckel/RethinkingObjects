@@ -54,7 +54,7 @@ Error: 0x800701bc WSL 2 requires an update to its kernel component. For informat
 ```
 In either case, follow the instructions at the given URL.
 - You might need to reboot the computer. Note that if you have Windows updates pending you might have to reboot more than once before WSL is enabled.
-- Open an Ubuntu shell from the Windows terminal.
+- Open an Ubuntu shell from the Windows terminal and follow the instructions to set up a username and password.
 - At this writing, the default Python installed with Ubuntu 22.04.1 is version 3.10.6. To run Pants, you will need to add Python 3.9, described in the next section.
 
 ## Installing Additional Python Interpreters
