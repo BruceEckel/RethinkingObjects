@@ -13,10 +13,8 @@ We are using Pants version 2 here; there are differences in the commands from Pa
 On Windows, Pants only runs under Windows Subsystem for Linux (WSL). (_They are working on supporting Windows directly)._ If you have not installed WSL on your
 machine, the following instructions will guide you.
 
-### Installing WSL on Windows 10 from the MS Store
-
-- (Assuming there is no prior WSL on your system).
-- Inside the MS Store, find Ubuntu 22.04.1 LTS, click the "get" button.
+### Installing WSL on Windows 10
+- Inside the Microsoft Store, find Ubuntu 22.04.1 LTS. Click the "get" button.
 - Upon clicking the "Open" button after installing from the MS Store, you will
   see:
 - `Error: 0x800701bc WSL 2 requires an update to its kernel component. For
@@ -74,7 +72,6 @@ machine, the following instructions will guide you.
 - There are [reasons to consider using WSL 1](https://learn.microsoft.com/en-us/windows/wsl/compare-versions#exceptions-for-using-wsl-1-rather-than-wsl-2) rather than WSL 2.
 
 ## Windows 11
-(NOTE: Retest this process after removing WSL)
 - After installing throught the Windows Store as above, when you click the "Open" button you may see:
 ```
 Installing, this may take a few minutes...
