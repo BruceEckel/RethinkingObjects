@@ -41,7 +41,8 @@ machine, the following instructions will guide you.
 
 ##  Installing WSL on Windows 11
 - First, install all pending Windows updates.
-- After installing through the Windows Store as described for Windows 10 (above), when you click the "Open" button you may see either of these messages:
+- After installing through the Windows Store as described for Windows 10 (above), when you click the "Open" button you may see either of the following messages.
+  Note that these messages changed over the duration of these experiments, so by the time you try this the process might be fixed.
 ```
 WslRegisterDistribution failed with error: 0x8007019e
 The Windows Subsystem for Linux optional component is not enabled. Please enable it and try again.
