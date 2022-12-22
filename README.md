@@ -1,6 +1,6 @@
-# RethinkingObjects
+# Rethinking Objects
 
-Code Examples From the Book "Rethinking Objects"
+Code Examples From the Book.
 
 This repository uses the Pants 2 build system, which runs under Linux. If you
 are running on either MacOS or Linux, you're ready to use this repository if you
