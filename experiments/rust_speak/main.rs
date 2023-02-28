@@ -4,31 +4,32 @@ struct Base {
   speaking: String,
 }
 
-struct Person {
-  base: Base,
-}
-struct Robot {
-  base: Base,
-}
-
 trait Basic {
   fn eat(&self);
   fn speak(&self);
 }
 
-// impl dyn Basic {
-//   fn eat(&self) { println!("{}", self.eating); }
-//   fn speak(&self) { println!("{}", self.speaking); }
-// }
+impl Basic for Base {
+  fn eat(&self) { println!("{}", self.eating); }
+  fn speak(&self) { println!("{}", self.speaking); }
+}
+
+struct Person {
+  base: Base,
+}
+
+struct Robot {
+  base: Base,
+}
 
 impl Basic for Person {
-  fn eat(&self) { println!("{}", self.base.eating); }
-  fn speak(&self) { println!("{}", self.base.speaking); }
+  fn eat(&self) { self.base.eat(); }
+  fn speak(&self) { self.base.speak(); }
 }
 
 impl Basic for Robot {
-  fn eat(&self) { println!("{}", self.base.eating); }
-  fn speak(&self) { println!("{}", self.base.speaking); }
+  fn eat(&self) { self.base.eat(); }
+  fn speak(&self) { self.base.speak(); }
 }
 
 trait Walker {
@@ -54,7 +55,7 @@ trait Everything: Basic + Walker {
 impl Everything for Person {}
 impl Everything for Robot {}
 
-fn make_person() -> Person {
+fn make_person() -> Person { // Constructor
   Person {
     base: Base {
       eating: String::from("eating pizza"),
@@ -63,7 +64,7 @@ fn make_person() -> Person {
   }
 }
 
-fn make_robot() -> Robot {
+fn make_robot() -> Robot { // Constructor
   Robot {
     base: Base {
       eating: String::from("charging"),
