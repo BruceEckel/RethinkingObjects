@@ -1,6 +1,12 @@
 //: src/rust/inheritance/src/main.rs
-struct Person;
-struct Robot;
+struct Person {
+  eating: String,
+  speaking: String
+}
+struct Robot {
+  eating: String,
+  speaking: String
+}
 
 trait Base {
   fn eat(&self);
@@ -8,13 +14,13 @@ trait Base {
 }
 
 impl Base for Person {
-  fn eat(&self) { println!("eating pizza"); }
-  fn speak(&self) { println!("blah blah"); }
+  fn eat(&self) { println!("{}", self.eating); }
+  fn speak(&self) { println!("{}", self.speaking); }
 }
 
 impl Base for Robot {
-  fn eat(&self) { println!("charging"); }
-  fn speak(&self) { println!("beep ping"); }
+  fn eat(&self) { println!("{}", self.eating); }
+  fn speak(&self) { println!("{}", self.speaking); }
 }
 
 trait Walker {
@@ -40,8 +46,24 @@ trait Everything: Base + Walker {
 impl Everything for Person {}
 impl Everything for Robot {}
 
+fn make_person() -> Person {
+  Person {
+    eating: String::from("eating pizza"),
+    speaking: String::from("blah blah")
+  }
+}
+
+fn make_robot() -> Robot {
+  Robot {
+    eating: String::from("charging"),
+    speaking: String::from("beep ping")
+  }
+}
+
 fn main() {
-  let v: Vec<&dyn Everything> = vec![&Person{}, &Robot{}];
+  let person = make_person();
+  let robot = make_robot();
+  let v: Vec<&dyn Everything> = vec![&person, &robot];
   for e in v.iter() {
     e.do_everything();
   }
