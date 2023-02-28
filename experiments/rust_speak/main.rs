@@ -1,26 +1,34 @@
-//: src/rust/inheritance/src/main.rs
-struct Person {
+//: RethinkingObjects/experiments/rust_speak/main.rs
+struct Base {
   eating: String,
-  speaking: String
-}
-struct Robot {
-  eating: String,
-  speaking: String
+  speaking: String,
 }
 
-trait Base {
+struct Person {
+  base: Base,
+}
+struct Robot {
+  base: Base,
+}
+
+trait Basic {
   fn eat(&self);
   fn speak(&self);
 }
 
-impl Base for Person {
-  fn eat(&self) { println!("{}", self.eating); }
-  fn speak(&self) { println!("{}", self.speaking); }
+// impl dyn Basic {
+//   fn eat(&self) { println!("{}", self.eating); }
+//   fn speak(&self) { println!("{}", self.speaking); }
+// }
+
+impl Basic for Person {
+  fn eat(&self) { println!("{}", self.base.eating); }
+  fn speak(&self) { println!("{}", self.base.speaking); }
 }
 
-impl Base for Robot {
-  fn eat(&self) { println!("{}", self.eating); }
-  fn speak(&self) { println!("{}", self.speaking); }
+impl Basic for Robot {
+  fn eat(&self) { println!("{}", self.base.eating); }
+  fn speak(&self) { println!("{}", self.base.speaking); }
 }
 
 trait Walker {
@@ -35,7 +43,7 @@ impl Walker for Robot {
   fn walk(&self) { println!("smart robot rolling"); }
 }
 
-trait Everything: Base + Walker {
+trait Everything: Basic + Walker {
   fn do_everything(&self) {  // Default implementation
     self.eat();
     self.speak();
@@ -48,15 +56,19 @@ impl Everything for Robot {}
 
 fn make_person() -> Person {
   Person {
-    eating: String::from("eating pizza"),
-    speaking: String::from("blah blah")
+    base: Base {
+      eating: String::from("eating pizza"),
+      speaking: String::from("blah blah")
+    }
   }
 }
 
 fn make_robot() -> Robot {
   Robot {
-    eating: String::from("charging"),
-    speaking: String::from("beep ping")
+    base: Base {
+      eating: String::from("charging"),
+      speaking: String::from("beep ping")
+    }
   }
 }
 
