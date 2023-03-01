@@ -1,4 +1,5 @@
 //: RethinkingObjects/experiments/rust_objects2/main.rs
+// Composition
 
 struct A {
   description: String,
@@ -32,102 +33,12 @@ impl Info for All {
 }
 
 fn main() {
-  let a = All {
+  let x = All {
     a: A { description: String::from("hello world") },
     b: B { count: 11 },
     c: C { id: 3 },
   };
-  println!("a.description(): {}", a.description());
-  println!("a.count(): {}", a.count());
-  println!("a.id(): {}", a.id());
+  println!("x.description(): {}", x.description());
+  println!("x.count(): {}", x.count());
+  println!("x.id(): {}", x.id());
 }
-
-
-
-// impl Basic for Base {
-//   fn eat(&self) { println!("{}", self.description); }
-//   fn speak(&self) { println!("{}", self.count); }
-// }
-
-// struct Person {
-//   base: Base,
-// }
-
-// struct Robot {
-//   base: Base,
-// }
-
-// trait BaseDelegator {
-//   fn base(&self) -> &Base;
-// }
-
-// impl BaseDelegator for Person {
-//   fn base(&self) -> &Base {
-//     &self.base
-//   }
-// }
-
-// impl BaseDelegator for Robot {
-//   fn base(&self) -> &Base {
-//     &self.base
-//   }
-// }
-
-// impl<T: BaseDelegator> Basic for T {
-//   fn eat(&self) {
-//     self.base().eat()
-//   }
-//   fn speak(&self) {
-//     self.base().speak()
-//   }
-// }
-
-// trait Walker {
-//   fn walk(&self);
-// }
-
-// impl Walker for Person {
-//   fn walk(&self) { println!("dumb human walking"); }
-// }
-
-// impl Walker for Robot {
-//   fn walk(&self) { println!("smart robot rolling"); }
-// }
-
-// trait Everything: Basic + Walker {
-//   fn do_everything(&self) {  // Default implementation
-//     self.eat();
-//     self.speak();
-//     self.walk();
-//   }
-// }
-
-// impl Everything for Person {}
-// impl Everything for Robot {}
-
-// fn make_person() -> Person { // Constructor
-//   Person {
-//     base: Base {
-//       description: String::from("description pizza"),
-//       count: String::from("blah blah")
-//     }
-//   }
-// }
-
-// fn make_robot() -> Robot { // Constructor
-//   Robot {
-//     base: Base {
-//       description: String::from("charging"),
-//       count: String::from("beep ping")
-//     }
-//   }
-// }
-
-// fn main() {
-//   let person = make_person();
-//   let robot = make_robot();
-//   let v: Vec<&dyn Everything> = vec![&person, &robot];
-//   for e in v.iter() {
-//     e.do_everything();
-//   }
-// }

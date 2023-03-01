@@ -1,4 +1,5 @@
 //: RethinkingObjects/experiments/rust_objects1/main.rs
+// Basic Rust "objects"
 
 struct Base {
   description: String,
