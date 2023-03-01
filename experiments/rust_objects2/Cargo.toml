@@ -1,5 +1,5 @@
 [package]
-name = "rust_objects1"
+name = "rust_objects2"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,5 +8,5 @@ edition = "2021"
 [dependencies]
 
 [[bin]]
-name = "rust_objects1"
+name = "rust_objects2"
 path = "main.rs"

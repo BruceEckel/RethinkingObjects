@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "rust_objects1"
+name = "rust_objects2"
 version = "0.1.0"
