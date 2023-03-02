@@ -22,7 +22,8 @@ trait InfoB {
 
 impl InfoB for Base {  // Notice Base is a struct
   fn summary_b(&self) {
-    println!("summary_b(): {}: {}", self.description, self.count);
+    println!("summary_b(): {}: {}", 
+      self.description, self.count);
   }
 }
 
@@ -30,13 +31,16 @@ trait InfoC {
   fn summary_c(&self);
 }
 
-impl<T: Info> InfoC for T {  // T must be a trait, not a struct (!)
+// T must be a trait, not a struct (!):
+impl<T: Info> InfoC for T {
   fn summary_c(&self) {
-    println!("summary_c(): {}: {}", self.description(), self.count());
+    println!("summary_c(): {}: {}", 
+      self.description(), self.count());
   }
 }  // Notice: No explicit InfoC for Base!
 
-// Or you could do it like this -- but not at the same time (conflict):
+// Or you could do it like this --
+// but not at the same time (conflict):
 // impl<T: InfoB> InfoC for T {
 //   fn summary_c(&self) {
 //     self.summary_b();
