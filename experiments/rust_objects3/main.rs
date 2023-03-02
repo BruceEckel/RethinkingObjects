@@ -26,6 +26,16 @@ impl Show for Derived {
   }
 }
 
+struct Other {
+  id: i8,
+}
+
+impl Show for Other {
+  fn show(&self) {
+    println!("show() for Other: {:?}", self.id);
+  }
+}
+
 fn main() {
   let b = Base {
     description: String::from("Base"),
@@ -34,7 +44,8 @@ fn main() {
     base: Base { description: String::from("Derived") },
     count: 11,
   };
-  let v: Vec<&dyn Show> = vec![&b, &d];
+  let o = Other { id: 47 };
+  let v: Vec<&dyn Show> = vec![&b, &d, &o];
   for e in v.iter() {
     e.show();
   }
