@@ -16,7 +16,7 @@ class Composed:
   a: A
   b: B
 
-def f(c: Composed):
+def f(c: Composed) -> Composed:
   return evolve(c, b=evolve(c.b, words=("green", "road")))
 
 c = Composed(A('x', 'an A'), B(3, ("yellow", "brick", "road")))

@@ -1,5 +1,5 @@
 # plugged.py
-from encapsulation import Leaky, test_for_leaks
+from a_encapsulation import Leaky, check_for_leaks
 from copy import copy
 
 class Plugged(Leaky):
@@ -19,7 +19,7 @@ class Plugged(Leaky):
     def leak(self): return self._bob
 
 if __name__ == "__main__":
-    test_for_leaks(Plugged)
+    check_for_leaks(Plugged)
 """
 Plugged:
     x: 42

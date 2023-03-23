@@ -30,7 +30,7 @@ class Leaky:
 
     # ... Also might need comparison, hashcode etc.
 
-def test_for_leaks(Klass):
+def check_for_leaks(Klass):
     obj = Klass(42, ['a', 'b'])
     print(obj)
     xx = obj.x
@@ -42,7 +42,7 @@ def test_for_leaks(Klass):
     print(obj)
 
 if __name__ == "__main__":
-    test_for_leaks(Leaky)
+    check_for_leaks(Leaky)
 """
 Leaky:
     x: 42

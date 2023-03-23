@@ -1,7 +1,7 @@
 from attrs import frozen
 from math import sqrt
 from typing import Protocol
-from distance import Point
+from d_distance import Point
 
 class Coord(Protocol):
     x: int
@@ -19,13 +19,12 @@ class AB:
     a: int = 0
     b: int = 0
 
-def test_adapter():
-    p1 = AB(3, 0)
-    p2 = AB(0, 4)
+def test_point_adapter():
+    p1, p2 = AB(3, 0), AB(0, 4)
     # Point can be used as an adapter:
     assert distance(Point(p1.a, p1.b), Point(p2.a, p2.b)) == 5
 
-# Creating an explicit adapter:
+# An explicit adapter:
 @frozen
 class Adapt(Coord):
     ab: AB  # Composition!
@@ -34,5 +33,5 @@ class Adapt(Coord):
     @property
     def y(self): return self.ab.b
 
-def test_adapter2():
+def test_adapt():
     assert distance(Adapt(AB(3, 0)), Adapt(AB(0, 4))) == 5
