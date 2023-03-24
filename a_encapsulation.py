@@ -22,32 +22,35 @@ class Leaky:
     def bob(self): return self._bob
 
     def __repr__(self):
-        return dedent(f"""\
+        return dedent(f"""
         {type(self).__name__}:
             x: {self._x}
             l: {self._l}
-            bob: {self._bob}""")
+            bob: {self._bob}
+        """)
 
     # ... Also might need comparison, hashcode etc.
 
 def check_for_leaks(Klass):
     obj = Klass(42, ['a', 'b'])
-    print(obj)
+    before = repr(obj)
     xx = obj.x
     xx += 1
     ll = obj.l
     ll.append('z')
     b = obj.bob
     b.name = "Ralph"
-    print(obj)
+    return before, repr(obj)
 
-if __name__ == "__main__":
-    check_for_leaks(Leaky)
-"""
+def test_leaks():
+    before, after = check_for_leaks(Leaky)
+    assert before == """
 Leaky:
     x: 42
     l: ['a', 'b']
     bob: Bob
+"""
+    assert after == """
 Leaky:
     x: 42
     l: ['a', 'b', 'z']

@@ -18,13 +18,15 @@ class Plugged(Leaky):
     # Requires vigilance here & in subclasses:
     def leak(self): return self._bob
 
-if __name__ == "__main__":
-    check_for_leaks(Plugged)
-"""
+def test_leaks():
+    before, after = check_for_leaks(Plugged)
+    assert before == """
 Plugged:
     x: 42
     l: ['a', 'b']
     bob: Bob
+"""
+    assert after == """
 Plugged:
     x: 42
     l: ['a', 'b']
