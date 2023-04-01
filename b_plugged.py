@@ -1,21 +1,21 @@
-# plugged.py
+# b_plugged.py
 from a_encapsulation import Leaky, check_for_leaks
 from copy import copy
 
-class Plugged(Leaky):
+class Plugged(Leaky): # Only to reduce code here
     def __init__(self, x: int, l: list):
         super().__init__(x, l)
 
     @property
     def x(self): return self._x
 
-    @property
+    @property # Decouple by copying:
     def l(self): return self._l.copy()
 
-    @property
+    @property # Ditto:
     def bob(self): return copy(self._bob)
 
-    # Requires vigilance here & in subclasses:
+    # Can re-leak here & in subclasses:
     def leak(self): return self._bob
 
 def test_leaks():

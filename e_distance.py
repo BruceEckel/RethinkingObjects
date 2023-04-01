@@ -1,3 +1,5 @@
+# e_distance.py
+# Generalizing distance() using protocols
 from attrs import frozen
 from math import sqrt
 from typing import Protocol

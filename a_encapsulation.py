@@ -1,4 +1,4 @@
-# encapsulation.py
+# a_encapsulation.py
 from textwrap import dedent
 
 class Bob:
@@ -9,7 +9,7 @@ class Bob:
 class Leaky:
     def __init__(self, x: int, l: list):
         self._x: int = x
-        self._l: list = l  # True for dicts too
+        self._l: list = l
         self._bob: Bob = Bob()
 
     @property
