@@ -22,7 +22,8 @@ struct Derived {
 
 impl Show for Derived {
   fn show(&self) {
-    println!("show() for {:?}, {:?}", self.base.description, self.count);
+    println!("show() for {:?}, {:?}", 
+      self.base.description, self.count);
   }
 }
 
