@@ -1,5 +1,4 @@
 import math
-from typing import List
 
 class Shape:
     def area(self) -> float: ...
@@ -19,6 +18,6 @@ class Circle(Shape):
 
 def test_shapes() -> None:
     r = math.sqrt(4.0 / math.pi)
-    shapes: List[Shape] = [Circle(r), Rectangle(3.0, 4.0)]
+    shapes = [Circle(r), Rectangle(3.0, 4.0)]
     assert round(shapes[0].area()) == 4
     assert shapes[1].area() == 12
