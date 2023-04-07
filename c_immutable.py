@@ -18,9 +18,9 @@ def test_immutable():
         "Immutable(n=42, t=('a', 'b'), bob={'i': 11, 'j': 12})"
     nn = immutable.n
     nn += 1
-    tt = immutable.t
-    # ll.append('z')  # 'tuple' object has no attribute 'append'
-    b = immutable.bob
-    # b.name = "Ralph"  # FrozenInstanceError
+    _tt = immutable.t
+    # _tt.append('z')  # 'tuple' object has no attribute 'append'
+    _b = immutable.bob
+    # _b.name = "Ralph"  # FrozenInstanceError
     assert repr(immutable) == \
         "Immutable(n=42, t=('a', 'b'), bob={'i': 11, 'j': 12})"
