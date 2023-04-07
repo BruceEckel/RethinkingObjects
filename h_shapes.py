@@ -1,5 +1,5 @@
 import math
-from typing import Union, List
+from typing import List
 from attrs import frozen
 
 @frozen

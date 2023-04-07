@@ -7,16 +7,16 @@ class Bob:
     def __repr__(self): return f"{self.name}"
 
 class Leaky:
-    def __init__(self, x: int, l: list):
-        self._x: int = x
-        self._l: list = l
+    def __init__(self, n: int, lst: list):
+        self._n: int = n
+        self._lst: list = lst
         self._bob: Bob = Bob()
 
     @property
-    def x(self): return self._x
+    def n(self): return self._n
 
     @property
-    def l(self): return self._l
+    def lst(self): return self._lst
 
     @property
     def bob(self): return self._bob
@@ -24,8 +24,8 @@ class Leaky:
     def __repr__(self):
         return dedent(f"""
         {type(self).__name__}:
-            x: {self._x}
-            l: {self._l}
+            n: {self._n}
+            lst: {self._lst}
             bob: {self._bob}
         """)
 
@@ -34,10 +34,10 @@ class Leaky:
 def check_for_leaks(Klass):
     obj = Klass(42, ['a', 'b'])
     before = repr(obj)
-    xx = obj.x
-    xx += 1
-    ll = obj.l
-    ll.append('z')
+    nn = obj.n
+    nn += 1
+    lst = obj.lst
+    lst.append('z')
     b = obj.bob
     b.name = "Ralph"
     return before, repr(obj)
@@ -46,13 +46,13 @@ def test_leaks():
     before, after = check_for_leaks(Leaky)
     assert before == """
 Leaky:
-    x: 42
-    l: ['a', 'b']
+    n: 42
+    lst: ['a', 'b']
     bob: Bob
 """
     assert after == """
 Leaky:
-    x: 42
-    l: ['a', 'b', 'z']
+    n: 42
+    lst: ['a', 'b', 'z']
     bob: Ralph
 """

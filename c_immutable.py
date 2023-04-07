@@ -8,19 +8,19 @@ class Bob:
 
 @frozen
 class Immutable:
-    x: int
-    l: tuple
+    n: int
+    t: tuple
     bob: Bob = Bob()
 
 def test_immutable():
     immutable = Immutable(42, ('a', 'b'), {'i': 11, 'j': 12})
     assert repr(immutable) == \
-        "Immutable(x=42, l=('a', 'b'), bob={'i': 11, 'j': 12})"
-    xx = immutable.x
-    xx += 1
-    ll = immutable.l
+        "Immutable(n=42, t=('a', 'b'), bob={'i': 11, 'j': 12})"
+    nn = immutable.n
+    nn += 1
+    tt = immutable.t
     # ll.append('z')  # 'tuple' object has no attribute 'append'
     b = immutable.bob
     # b.name = "Ralph"  # FrozenInstanceError
     assert repr(immutable) == \
-        "Immutable(x=42, l=('a', 'b'), bob={'i': 11, 'j': 12})"
+        "Immutable(n=42, t=('a', 'b'), bob={'i': 11, 'j': 12})"
