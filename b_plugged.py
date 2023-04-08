@@ -1,5 +1,5 @@
 # b_plugged.py
-from a_encapsulation import Leaky, check_for_leaks
+from a_encapsulation import Bob, Leaky, check_for_leaks
 from copy import copy
 
 class Plugged(Leaky): # Only to reduce code here
@@ -7,16 +7,20 @@ class Plugged(Leaky): # Only to reduce code here
         super().__init__(n, lst)
 
     @property
-    def x(self): return self._x
+    def x(self) -> int:
+        return self._x
 
     @property # Decouple by copying:
-    def lst(self): return self._lst.copy()
+    def lst(self) -> list:
+        return self._lst.copy()
 
     @property # Ditto:
-    def bob(self): return copy(self._bob)
+    def bob(self) -> Bob:
+        return copy(self._bob)
 
     # Can re-leak here & in subclasses:
-    def leak(self): return self._bob
+    def leak(self) -> Bob:
+        return self._bob
 
 def test_leaks():
     before, after = check_for_leaks(Plugged)

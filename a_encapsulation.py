@@ -6,7 +6,8 @@ class Bob:
         self._name = "Bob"
 
     @property
-    def name(self): return self._name
+    def name(self) -> str:
+        return self._name
 
     @name.setter
     def name(self, value: str):
@@ -21,13 +22,16 @@ class Leaky:
         self._bob: Bob = Bob()
 
     @property
-    def n(self): return self._n
+    def n(self) -> int:
+        return self._n
 
     @property
-    def lst(self): return self._lst
+    def lst(self) -> list:
+        return self._lst
 
     @property
-    def bob(self): return self._bob
+    def bob(self) -> Bob:
+        return self._bob
 
     def __repr__(self):
         return dedent(f"""

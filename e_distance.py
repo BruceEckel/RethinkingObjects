@@ -9,7 +9,7 @@ class Coord(Protocol):
     x: int
     y: int
 
-def distance(p1: Coord, p2: Coord):
+def distance(p1: Coord, p2: Coord) -> float:
     return sqrt((p2.x - p1.x)**2 + (p2.y - p1.y)**2)
 
 def test_pythagorean_triple():

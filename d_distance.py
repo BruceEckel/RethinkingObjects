@@ -6,12 +6,12 @@ from math import sqrt
 class Point:
     x: int = 0
     y: int = 0
-    # "Proper OO":
-    def distance_to(self, p2): # Can't use Point annotation
+    # "Proper OO", but can't use Point annotation
+    def distance_to(self, p2) -> float:
         return sqrt((p2.x - self.x)**2 + (p2.y - self.y)**2)
 
 # Why not this?
-def distance(p1: Point, p2: Point):
+def distance(p1: Point, p2: Point) -> float:
     return sqrt((p2.x - p1.x)**2 + (p2.y - p1.y)**2)
 
 def test_pythagorean_triple(): # The '3-4-5' Triangle
