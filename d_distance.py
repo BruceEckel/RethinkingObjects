@@ -4,8 +4,8 @@ from math import sqrt
 
 @frozen
 class Point:
-    x: int = 0
-    y: int = 0
+    x: int
+    y: int
     # "Proper OO", but can't use Point annotation
     def distance_to(self, p2) -> float:
         return sqrt((p2.x - self.x)**2 + (p2.y - self.y)**2)

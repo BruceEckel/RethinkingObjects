@@ -13,16 +13,16 @@ def distance(p1: Coord, p2: Coord) -> float:
 
 @frozen
 class Point(Coord):
-    x: int = 0
-    y: int = 0
+    x: int
+    y: int
 
 def test_pythagorean_triple():
     assert distance(Point(3, 0), Point(0, 4)) == 5
 
 @frozen
 class AB:
-    a: int = 0
-    b: int = 0
+    a: int
+    b: int
 
 def test_point_adapter():
     p1, p2 = AB(3, 0), AB(0, 4)
