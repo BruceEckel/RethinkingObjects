@@ -13,7 +13,7 @@ class Immutable:
     bob: Bob = Bob()
 
 def test_immutable():
-    immutable = Immutable(42, ('a', 'b'), {'i': 11, 'j': 12})
+    immutable = Immutable(42, ('a', 'b'), Bob())
     assert repr(immutable) == \
         "Immutable(n=42, t=('a', 'b'), bob={'i': 11, 'j': 12})"
     nn = immutable.n

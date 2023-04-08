@@ -8,7 +8,7 @@ class Plugged(Leaky): # Only to reduce code here
 
     @property
     def x(self) -> int:
-        return self._x
+        return self._n
 
     @property # Decouple by copying:
     def lst(self) -> list:
