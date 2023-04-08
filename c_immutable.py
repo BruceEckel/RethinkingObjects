@@ -10,12 +10,12 @@ class Bob:
 class Immutable:
     n: int
     t: tuple
-    bob: Bob = Bob()
+    bob: Bob
 
 def test_immutable():
     immutable = Immutable(42, ('a', 'b'), Bob())
     assert repr(immutable) == \
-        "Immutable(n=42, t=('a', 'b'), bob={'i': 11, 'j': 12})"
+        "Immutable(n=42, t=('a', 'b'), bob=Bob(name='Bob'))"
     nn = immutable.n
     nn += 1
     _tt = immutable.t
@@ -23,4 +23,4 @@ def test_immutable():
     _b = immutable.bob
     # _b.name = "Ralph"  # FrozenInstanceError
     assert repr(immutable) == \
-        "Immutable(n=42, t=('a', 'b'), bob={'i': 11, 'j': 12})"
+        "Immutable(n=42, t=('a', 'b'), bob=Bob(name='Bob'))"

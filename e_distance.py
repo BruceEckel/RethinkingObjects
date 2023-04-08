@@ -3,7 +3,6 @@
 from attrs import frozen
 from math import sqrt
 from typing import Protocol
-from d_distance import Point
 
 class Coord(Protocol):
     x: int
@@ -12,8 +11,12 @@ class Coord(Protocol):
 def distance(p1: Coord, p2: Coord) -> float:
     return sqrt((p2.x - p1.x)**2 + (p2.y - p1.y)**2)
 
+@frozen
+class Point(Coord):
+    x: int = 0
+    y: int = 0
+
 def test_pythagorean_triple():
-    # Points are already Coords (they have x & y):
     assert distance(Point(3, 0), Point(0, 4)) == 5
 
 @frozen
