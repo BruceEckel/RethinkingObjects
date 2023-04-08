@@ -19,7 +19,7 @@ def area(shape: Rectangle | Circle) -> float:
         case Circle(radius=r):
             return math.pi * r ** 2
 
-def test_shapes() -> None:
+def test_shapes():
     r = math.sqrt(4.0 / math.pi)
     shapes: List[Rectangle | Circle] = [Circle(r), Rectangle(3.0, 4.0)]
     assert round(area(shapes[0])) == 4

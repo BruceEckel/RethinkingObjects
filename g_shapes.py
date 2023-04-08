@@ -1,7 +1,9 @@
 # g_shapes.py
+from abc import ABC, abstractmethod
 import math
 
-class Shape:
+class Shape(ABC):
+    @abstractmethod
     def area(self) -> float: ...
 
 class Rectangle(Shape):
@@ -17,7 +19,7 @@ class Circle(Shape):
     def area(self) -> float:
         return math.pi * self.radius ** 2
 
-def test_shapes() -> None:
+def test_shapes():
     r = math.sqrt(4.0 / math.pi)
     shapes = [Circle(r), Rectangle(3.0, 4.0)]
     assert round(shapes[0].area()) == 4

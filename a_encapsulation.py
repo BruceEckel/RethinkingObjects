@@ -3,8 +3,16 @@ from textwrap import dedent
 
 class Bob:
     def __init__(self):
-        self.name = "Bob"
-    def __repr__(self): return f"{self.name}"
+        self._name = "Bob"
+
+    @property
+    def name(self): return self._name
+
+    @name.setter
+    def name(self, value: str):
+        self._name = value
+
+    def __repr__(self): return f"{self._name}"
 
 class Leaky:
     def __init__(self, n: int, lst: list):
