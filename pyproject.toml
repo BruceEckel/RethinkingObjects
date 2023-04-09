@@ -1,3 +1,19 @@
+[tool.hatch]
+# pip install hatch
+# Then, from a command prompt, run 'hatch shell'
+# Run commands like 'pytest', 'ruff check .' and 'mypy .'
+# To exit the hatch shell, enter 'exit'.
+
+[project]
+name = "rethinking-objects"
+
+dependencies = [
+  "attrs",
+  "pytest",
+  "ruff",
+  "mypy",
+]
+
 [tool.pytest.ini_options]
 minversion = "7.2.2"
 python_files = "*.py"  # Discover tests in every python file

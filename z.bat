@@ -1,4 +1,4 @@
 :: Run all checks; requires pip-installation of these programs:
 pytest
-ruff .
+ruff check .
 mypy .
