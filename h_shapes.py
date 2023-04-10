@@ -1,6 +1,5 @@
 # h_shapes.py
 import math
-from typing import List
 from attrs import frozen
 
 @frozen
@@ -21,6 +20,7 @@ def area(shape: Rectangle | Circle) -> float:
 
 def test_shapes():
     r = math.sqrt(4.0 / math.pi)
-    shapes: List[Rectangle | Circle] = [Circle(r), Rectangle(3.0, 4.0)]
+    shapes: list[Rectangle | Circle] = \
+        [Circle(r), Rectangle(3.0, 4.0)]
     assert round(area(shapes[0])) == 4
     assert area(shapes[1]) == 12

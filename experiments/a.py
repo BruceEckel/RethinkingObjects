@@ -13,7 +13,8 @@ def a1_main():
     app()
   finally:
     sys.stdout = orig_stdout
-  assert f"Hello World!{os.linesep}" == test_output.getvalue()
+  assert f"Hello World!{os.linesep}" == \
+    test_output.getvalue()
 
 def a2_main():
   print("Running a2_main")

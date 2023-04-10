@@ -13,13 +13,14 @@ class Immutable:
     bob: Bob
 
 def test_immutable():
-    immutable = Immutable(42, ('a', 'b'), Bob())
+    immutable = Immutable(42, ("a", "b"), Bob())
     assert repr(immutable) == \
         "Immutable(n=42, t=('a', 'b'), bob=Bob(name='Bob'))"
     nn = immutable.n
     nn += 1
     _tt = immutable.t
-    # _tt.append('z')  # 'tuple' object has no attribute 'append'
+    # 'tuple' object has no attribute 'append':
+    # _tt.append('z')
     _b = immutable.bob
     # _b.name = "Ralph"  # FrozenInstanceError
     assert repr(immutable) == \

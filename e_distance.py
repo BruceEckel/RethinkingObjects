@@ -27,7 +27,8 @@ class AB:
 def test_point_adapter():
     p1, p2 = AB(3, 0), AB(0, 4)
     # Point can be used as an adapter:
-    assert distance(Point(p1.a, p1.b), Point(p2.a, p2.b)) == 5
+    d = distance(Point(p1.a, p1.b), Point(p2.a, p2.b))
+    assert d == 5
 
 # An explicit adapter:
 @frozen

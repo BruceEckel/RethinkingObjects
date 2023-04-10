@@ -43,13 +43,13 @@ class Leaky:
 
     # ... Also might need comparison, hashcode etc.
 
-def check_for_leaks(Klass):
-    obj = Klass(42, ['a', 'b'])
+def check_for_leaks(klass):
+    obj = klass(42, ["a", "b"])
     before = repr(obj)
     nn = obj.n
     nn += 1
     lst = obj.lst
-    lst.append('z')
+    lst.append("z")
     b = obj.bob
     b.name = "Ralph"
     return before, repr(obj)

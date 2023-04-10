@@ -1,6 +1,4 @@
-from typing import Tuple
-
-def f() -> Tuple[str, float]:
+def f() -> tuple[str, float]:
     return "pi", 3.14159
 
 def test_tuple_plain():
