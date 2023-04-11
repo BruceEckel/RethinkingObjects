@@ -13,7 +13,8 @@ class Bob:
     def name(self, value: str):
         self._name = value
 
-    def __repr__(self): return f"{self._name}"
+    def __repr__(self):
+        return f"{self._name}"
 
 class Leaky:
     def __init__(self, n: int, lst: list):
@@ -34,12 +35,14 @@ class Leaky:
         return self._bob
 
     def __repr__(self):
-        return dedent(f"""
+        return dedent(
+            f"""
         {type(self).__name__}:
             n: {self._n}
             lst: {self._lst}
             bob: {self._bob}
-        """)
+        """
+        )
 
     # ... Also might need comparison, hashcode etc.
 
@@ -56,15 +59,21 @@ def check_for_leaks(klass):
 
 def test_leaks():
     before, after = check_for_leaks(Leaky)
-    assert before == """
+    assert (
+        before
+        == """
 Leaky:
     n: 42
     lst: ['a', 'b']
     bob: Bob
 """
-    assert after == """
+    )
+    assert (
+        after
+        == """
 Leaky:
     n: 42
     lst: ['a', 'b', 'z']
     bob: Ralph
 """
+    )

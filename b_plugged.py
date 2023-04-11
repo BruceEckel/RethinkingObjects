@@ -2,7 +2,7 @@
 from a_encapsulation import Bob, Leaky, check_for_leaks
 from copy import copy
 
-class Plugged(Leaky): # Only to reduce code here
+class Plugged(Leaky):  # Only to reduce code here
     def __init__(self, n: int, lst: list):
         super().__init__(n, lst)
 
@@ -10,11 +10,11 @@ class Plugged(Leaky): # Only to reduce code here
     def x(self) -> int:
         return self._n
 
-    @property # Decouple by copying:
+    @property  # Decouple by copying:
     def lst(self) -> list:
         return self._lst.copy()
 
-    @property # Ditto:
+    @property  # Ditto:
     def bob(self) -> Bob:
         return copy(self._bob)
 
@@ -24,15 +24,21 @@ class Plugged(Leaky): # Only to reduce code here
 
 def test_leaks():
     before, after = check_for_leaks(Plugged)
-    assert before == """
+    assert (
+        before
+        == """
 Plugged:
     n: 42
     lst: ['a', 'b']
     bob: Bob
 """
-    assert after == """
+    )
+    assert (
+        after
+        == """
 Plugged:
     n: 42
     lst: ['a', 'b']
     bob: Bob
 """
+    )
