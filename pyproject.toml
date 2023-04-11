@@ -7,6 +7,7 @@ name = "rethinking-objects"
 
 dependencies = [
   "attrs",
+  "GitPython",
 ]
 
 [tool.hatch]
