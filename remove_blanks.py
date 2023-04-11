@@ -7,7 +7,7 @@ Github commits by touching the file.
 from collections.abc import Iterator
 from pathlib import Path
 
-def filter_lines(lines: list[str]) -> Iterator[str]:
+def deduplicate_blanks(lines: list[str]) -> Iterator[str]:
     prev_line: str = ""
     for line in lines:
         if line.strip() or prev_line.strip():
@@ -19,7 +19,7 @@ for file_path in current_dir.glob("*.py"):
     lines: list[str] = (
         file_path.read_text().strip().splitlines()
     )
-    new_lines: list[str] = list(filter_lines(lines))
+    new_lines: list[str] = list(deduplicate_blanks(lines))
     new_text: str = "\n".join(new_lines) + "\n"
     if new_text != file_path.read_text():
         file_path.write_text(new_text)
