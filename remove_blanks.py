@@ -8,7 +8,7 @@ from collections.abc import Iterator
 from pathlib import Path
 
 def filter_lines(lines: list[str]) -> Iterator[str]:
-    prev_line: str = None
+    prev_line: str = ""
     for line in lines:
         if line.strip() or prev_line.strip():
             yield line
