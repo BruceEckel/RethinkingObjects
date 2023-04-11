@@ -9,7 +9,7 @@ class Coord(Protocol):
     y: int
 
 def distance(p1: Coord, p2: Coord) -> float:
-    return sqrt((p2.x - p1.x)**2 + (p2.y - p1.y)**2)
+    return sqrt((p2.x - p1.x) ** 2 + (p2.y - p1.y) ** 2)
 
 @frozen
 class Point(Coord):
@@ -34,10 +34,14 @@ def test_point_adapter():
 @frozen
 class Adapt(Coord):
     ab: AB  # Composition!
+
     @property
-    def x(self): return self.ab.a
+    def x(self):
+        return self.ab.a
+
     @property
-    def y(self): return self.ab.b
+    def y(self):
+        return self.ab.b
 
 def test_adapt():
     assert distance(Adapt(AB(3, 0)), Adapt(AB(0, 4))) == 5

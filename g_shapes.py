@@ -4,7 +4,8 @@ import math
 
 class Shape(ABC):
     @abstractmethod
-    def area(self) -> float: ...
+    def area(self) -> float:
+        ...
 
 class Rectangle(Shape):
     def __init__(self, length: float, width: float):
@@ -19,7 +20,7 @@ class Circle(Shape):
         self.radius = radius
 
     def area(self) -> float:
-        return math.pi * self.radius ** 2
+        return math.pi * self.radius**2
 
 def test_shapes():
     r = math.sqrt(4.0 / math.pi)

@@ -22,14 +22,18 @@ def make_new_from(c: C) -> C:
 c = C(A("x", "A1"), B(3, ("oh", "wow")))  # "Safe global"
 
 def test_c():
-    assert repr(c) == \
-    "C(a=A(id='x', desc='A1'), b=B(n=3, words=('oh', 'wow')))"
+    assert (
+        repr(c)
+        == "C(a=A(id='x', desc='A1'), b=B(n=3, words=('oh', 'wow')))"
+    )
 
 def test_evolve():
     c2 = make_new_from(c)
-    assert repr(c2) == \
-    "C(a=A(id='x', desc='A1'), b=B(n=3, words=('no', 'duh')))"
-    assert c2 != c # Basic comparison
+    assert (
+        repr(c2)
+        == "C(a=A(id='x', desc='A1'), b=B(n=3, words=('no', 'duh')))"
+    )
+    assert c2 != c  # Basic comparison
 
 def test_dict_key():
     d = {c: "The value"}

@@ -1,14 +1,25 @@
-[tool.hatch]
-# pip install hatch
-# Then, from a command prompt, run 'hatch shell'
-# Run commands like 'pytest', 'ruff check .' and 'mypy .'
-# To exit the hatch shell, enter 'exit'.
+[build-system]
+requires = ["hatchling>=1.14.0"]
+build-backend = "hatchling.build"
 
 [project]
 name = "rethinking-objects"
 
 dependencies = [
   "attrs",
+]
+
+[tool.hatch]
+# Do this globally (not inside a virtualenv):
+# pip install hatch
+# Then, from a command prompt, run 'hatch shell'
+# (The first time can take a while).
+# Run commands like 'pytest', 'ruff check .' and 'mypy .'
+# To exit the hatch shell, enter 'exit'.
+
+[tool.hatch.envs.default]
+extra-dependencies = [
+  "black",
   "pytest",
   "ruff",
   "mypy",
@@ -75,11 +86,6 @@ ignore = [
   "PLW2901", # `for` loop variable overwritten
   "SIM114", # Combine `if` branches using logical `or` operator
 ]
-unfixable = [
-  # Don't touch unused imports
-  # "F401",
-]
-
 
 [tool.black]
 line-length = 62

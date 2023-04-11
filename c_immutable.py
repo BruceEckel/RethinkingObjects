@@ -14,8 +14,10 @@ class Immutable:
 
 def test_immutable():
     immutable = Immutable(42, ("a", "b"), Bob())
-    assert repr(immutable) == \
-        "Immutable(n=42, t=('a', 'b'), bob=Bob(name='Bob'))"
+    assert (
+        repr(immutable)
+        == "Immutable(n=42, t=('a', 'b'), bob=Bob(name='Bob'))"
+    )
     nn = immutable.n
     nn += 1
     _tt = immutable.t
@@ -23,5 +25,7 @@ def test_immutable():
     # _tt.append('z')
     _b = immutable.bob
     # _b.name = "Ralph"  # FrozenInstanceError
-    assert repr(immutable) == \
-        "Immutable(n=42, t=('a', 'b'), bob=Bob(name='Bob'))"
+    assert (
+        repr(immutable)
+        == "Immutable(n=42, t=('a', 'b'), bob=Bob(name='Bob'))"
+    )
