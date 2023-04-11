@@ -79,3 +79,9 @@ unfixable = [
   # Don't touch unused imports
   # "F401",
 ]
+
+
+[tool.black]
+line-length = 62
+skip-string-normalization = true
+target-version = ["py311"]
