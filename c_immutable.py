@@ -10,22 +10,22 @@ class Bob:
 class Immutable:
     n: int
     t: tuple
-    bob: Bob
+    b: Bob
 
 def test_immutable():
-    immutable = Immutable(42, ("a", "b"), Bob())
+    immutable = Immutable(42, ("x", "y"), Bob())
     assert (
         repr(immutable)
-        == "Immutable(n=42, t=('a', 'b'), bob=Bob(name='Bob'))"
+        == "Immutable(n=42, t=('x', 'y'), b=Bob(name='Bob'))"
     )
     nn = immutable.n
     nn += 1
     _tt = immutable.t
     # 'tuple' object has no attribute 'append':
     # _tt.append('z')
-    _b = immutable.bob
+    _b = immutable.b
     # _b.name = "Ralph"  # FrozenInstanceError
     assert (
         repr(immutable)
-        == "Immutable(n=42, t=('a', 'b'), bob=Bob(name='Bob'))"
+        == "Immutable(n=42, t=('x', 'y'), b=Bob(name='Bob'))"
     )
