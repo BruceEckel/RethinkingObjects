@@ -34,8 +34,12 @@ addopts = "-rA"
 [tool.mypy]
 python_version = "3.11"
 check_untyped_defs = true
+exclude = [
+    "^untouch\\.py$",
+]
 
 [tool.ruff]
+exclude = ["untouch.py"]
 # Assume Python 3.11:
 target-version = "py311"
 # Set max line length
@@ -43,7 +47,7 @@ line-length = 69
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 # Configurations starting from those copied from:
-# # From https://github.com/pypa/hatch/blob/master/pyproject.toml
+# https://github.com/pypa/hatch/blob/master/pyproject.toml
 select = [
   "A",
   "B",
