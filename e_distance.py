@@ -19,6 +19,7 @@ class Point(Coord):
 def test_pythagorean_triple():
     assert distance(Point(3, 0), Point(0, 4)) == 5
 
+# Suppose you are handed this non-Coord class:
 @frozen
 class AB:
     a: int
@@ -33,7 +34,7 @@ def test_point_adapter():
 # An explicit adapter:
 @frozen
 class Adapt(Coord):
-    ab: AB  # Composition!
+    ab: AB  # Composition
 
     @property
     def x(self):
