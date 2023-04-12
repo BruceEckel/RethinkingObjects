@@ -1,6 +1,6 @@
 # Rethinking Objects
 
-Code examples from the presentation **Rethinking Objects** presented at
+Code examples from the ***Rethinking Objects*** presentation at
 PyCon 2023 in Salt Lake City.
 
 You can find the (Google) slides for the presentation
@@ -12,7 +12,7 @@ run:
 ```
 hatch shell
 ```
-Which sets up and configures a virtual environment. Now you can run:
+This sets up and configures a virtual environment. Now you can run:
 ```
 pytest
 ruff check .
