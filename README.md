@@ -1,6 +1,6 @@
 # Rethinking Objects
 
-Code examples from the ***Rethinking Objects*** presentation at
+Code examples from my ***Rethinking Objects*** presentation at
 PyCon 2023 in Salt Lake City.
 
 You can find the (Google) slides for the presentation
