@@ -29,7 +29,7 @@ def test_leaks():
         == """
 Plugged:
     n: 42
-    lst: ['a', 'b']
+    lst: ['x', 'y']
     bob: Bob
 """
     )
@@ -38,7 +38,7 @@ Plugged:
         == """
 Plugged:
     n: 42
-    lst: ['a', 'b']
+    lst: ['x', 'y']
     bob: Bob
 """
     )

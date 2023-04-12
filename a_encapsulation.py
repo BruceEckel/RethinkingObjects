@@ -47,7 +47,7 @@ class Leaky:
     # ... Also might need comparison, hashcode etc.
 
 def check_for_leaks(klass):
-    obj = klass(42, ["a", "b"])
+    obj = klass(42, ["x", "y"])
     before = repr(obj)
     nn = obj.n
     nn += 1
@@ -64,7 +64,7 @@ def test_leaks():
         == """
 Leaky:
     n: 42
-    lst: ['a', 'b']
+    lst: ['x', 'y']
     bob: Bob
 """
     )
@@ -73,7 +73,7 @@ Leaky:
         == """
 Leaky:
     n: 42
-    lst: ['a', 'b', 'z']
+    lst: ['x', 'y', 'z']
     bob: Ralph
 """
     )

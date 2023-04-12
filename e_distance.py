@@ -8,8 +8,8 @@ class Coord(Protocol):
     x: int
     y: int
 
-def distance(p1: Coord, p2: Coord) -> float:
-    return sqrt((p2.x - p1.x) ** 2 + (p2.y - p1.y) ** 2)
+def distance(c1: Coord, c2: Coord) -> float:
+    return sqrt((c2.x - c1.x) ** 2 + (c2.y - c1.y) ** 2)
 
 @frozen
 class Point(Coord):
@@ -25,9 +25,9 @@ class AB:
     b: int
 
 def test_point_adapter():
-    p1, p2 = AB(3, 0), AB(0, 4)
+    ab1, ab2 = AB(3, 0), AB(0, 4)
     # Point can be used as an adapter:
-    d = distance(Point(p1.a, p1.b), Point(p2.a, p2.b))
+    d = distance(Point(ab1.a, ab1.b), Point(ab2.a, ab2.b))
     assert d == 5
 
 # An explicit adapter:
