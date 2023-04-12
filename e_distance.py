@@ -1,6 +1,6 @@
 # e_distance.py
 # Generalizing distance() using protocols
-from attrs import frozen
+from attrs import frozen, field
 from math import sqrt
 from typing import Protocol
 
@@ -31,18 +31,16 @@ def test_point_adapter():
     d = distance(Point(ab1.a, ab1.b), Point(ab2.a, ab2.b))
     assert d == 5
 
-# An explicit adapter:
+# An adapter class:
 @frozen
 class Adapt(Coord):
     ab: AB  # Composition
+    x: int = field()
+    @x.default
+    def dx(self): return self.ab.a
+    y: int = field()
+    @y.default
+    def dy(self): return self.ab.b
 
-    @property
-    def x(self):
-        return self.ab.a
-
-    @property
-    def y(self):
-        return self.ab.b
-
-def test_adapt():
+def test_adapt_class():
     assert distance(Adapt(AB(3, 0)), Adapt(AB(0, 4))) == 5
