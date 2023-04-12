@@ -12,7 +12,7 @@ run:
 ```
 hatch shell
 ```
-Which will set up and configure a virtual environment. Now you can run:
+Which sets up and configures a virtual environment. Now you can run:
 ```
 pytest
 ruff check .
