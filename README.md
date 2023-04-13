@@ -8,6 +8,8 @@ The (Google) slides for the presentation are
 
 The examples in this repository assume you have Python 3.11 installed.
 
+## Setup
+
 After cloning this repo, use `pip` or `pipx` to (globally) install the `hatch`
 build system.
 
