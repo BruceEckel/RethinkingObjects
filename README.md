@@ -19,7 +19,7 @@ Move to the root directory of the cloned repo and run:
 hatch shell
 ```
 
-This sets up and configures a virtual environment. Now you can run:
+This configures and enters a virtual environment. Now you can run:
 
 ```
 pytest
