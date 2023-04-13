@@ -9,7 +9,9 @@ You can find the (Google) slides for the presentation
 The examples in this repository assume you have Python 3.11 installed.
 
 After cloning this repo, use `pip` or `pipx` to (globally) install the `hatch`
-build system. Move to the root directory of the cloned repo. Then run:
+build system.
+
+Move to the root directory of the cloned repo and run:
 
 ```
 hatch shell
