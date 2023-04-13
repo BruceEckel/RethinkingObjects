@@ -1,8 +1,7 @@
 """
 Replaces consecutive blank lines with a single one.
 Preserves/ensures a blank line at the end of the file.
-Only writes file if it is unchanged, to prevent spurious
-Github commits by touching the file.
+Only writes file if it is unchanged.
 """
 from collections.abc import Iterator
 from pathlib import Path
