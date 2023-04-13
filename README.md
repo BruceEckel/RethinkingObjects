@@ -8,16 +8,19 @@ You can find the (Google) slides for the presentation
 
 The examples in this repository assume you have Python 3.11 installed.
 
-After cloning this repo, use `pip` or `pipx` to install the `hatch`
-build system. Move to the root directory of the cloned repo. Then
-run:
+After cloning this repo, use `pip` or `pipx` to (globally) install the `hatch`
+build system. Move to the root directory of the cloned repo. Then run:
+
 ```
 hatch shell
 ```
+
 This sets up and configures a virtual environment. Now you can run:
+
 ```
 pytest
 ruff check .
 mypy .
 ```
+
 These verify the code.
