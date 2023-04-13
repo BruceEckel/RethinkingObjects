@@ -27,4 +27,4 @@ ruff check .
 mypy .
 ```
 
-These verify the code.
+These verify the examples.
