@@ -1,6 +1,6 @@
-:: Run all checks; requires pip-installation of these programs:
+:: Run all checks; must be in `hatch shell` virtualenv:
 black .
 python .\remove_blanks.py
-pytest
 ruff check .
+pytest
 mypy .

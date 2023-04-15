@@ -24,7 +24,7 @@ extra-dependencies = [
   "pytest",
   "ruff",
   "mypy",
-]
+]  # Consider isort
 
 [tool.pytest.ini_options]
 minversion = "7.2.2"
@@ -94,5 +94,5 @@ ignore = [
 
 [tool.black]
 line-length = 62
-skip-string-normalization = true
+# skip-string-normalization = true # (single to double quotes)
 target-version = ["py311"]
