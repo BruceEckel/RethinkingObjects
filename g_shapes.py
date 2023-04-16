@@ -1,4 +1,5 @@
 # g_shapes.py
+# How would the classic "shape" look?
 from abc import ABC, abstractmethod
 import math
 
