@@ -1,6 +1,7 @@
 # b_plugged.py
-from a_encapsulation import Bob, Leaky, check_for_leaks
 from copy import copy
+
+from a_encapsulation import Bob, Leaky, check_for_leaks
 
 class Plugged(Leaky):  # Only to reduce code here
     def __init__(self, n: int, lst: list):

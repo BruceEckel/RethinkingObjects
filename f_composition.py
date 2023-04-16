@@ -1,5 +1,5 @@
 # f_composition.py
-from attrs import frozen, evolve
+from attrs import evolve, frozen
 
 @frozen
 class A:

@@ -1,7 +1,8 @@
 # d_distance.py
 # What about methods?
-from attrs import frozen
 from math import sqrt
+
+from attrs import frozen
 
 @frozen
 class Point:

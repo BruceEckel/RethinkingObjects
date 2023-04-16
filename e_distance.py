@@ -1,8 +1,9 @@
 # e_distance.py
 # Generalizing distance() using protocols
-from attrs import frozen, field
 from math import sqrt
 from typing import Protocol
+
+from attrs import field, frozen
 
 class Coord(Protocol):
     x: int
