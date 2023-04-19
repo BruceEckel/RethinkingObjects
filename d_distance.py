@@ -1,7 +1,6 @@
 # d_distance.py
 # What about methods?
 from math import sqrt
-
 from attrs import frozen
 
 @frozen

@@ -2,7 +2,6 @@
 # Generalizing distance() using protocols
 from math import sqrt
 from typing import Protocol
-
 from attrs import field, frozen
 
 class Coord(Protocol):

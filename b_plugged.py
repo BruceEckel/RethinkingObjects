@@ -1,6 +1,5 @@
 # b_plugged.py
 from copy import copy
-
 from a_encapsulation import Bob, Leaky, check_for_leaks
 
 class Plugged(Leaky):  # Only to reduce code here
