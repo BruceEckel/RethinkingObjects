@@ -1,4 +1,4 @@
-# f_composition.py
+# f_composition.py -- instead of implementation inheritance
 from attrs import evolve, frozen
 
 @frozen
