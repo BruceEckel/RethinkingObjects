@@ -36,12 +36,11 @@ def test_point_adapter():
 class Adapt(Coord):
     ab: AB  # Composition
     x: int = field()
+    y: int = field()
 
     @x.default
     def dx(self):
         return self.ab.a
-
-    y: int = field()
 
     @y.default
     def dy(self):

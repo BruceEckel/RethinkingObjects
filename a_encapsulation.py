@@ -46,7 +46,7 @@ class Leaky:
 
     # ... Also might need comparison, hashcode etc.
 
-def check_for_leaks(klass):
+def check_for_leaks(klass) -> tuple[str, str]:
     obj = klass(42, ["x", "y"])
     before = repr(obj)
     nn = obj.n
