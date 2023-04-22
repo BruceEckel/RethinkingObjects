@@ -36,11 +36,16 @@ def test_point_adapter():
 class Adapt(Coord):
     ab: AB  # Composition
     x: int = field()
+
     @x.default
-    def dx(self): return self.ab.a
+    def dx(self):
+        return self.ab.a
+
     y: int = field()
+
     @y.default
-    def dy(self): return self.ab.b
+    def dy(self):
+        return self.ab.b
 
 def test_adapt_class():
     assert distance(Adapt(AB(3, 0)), Adapt(AB(0, 4))) == 5
