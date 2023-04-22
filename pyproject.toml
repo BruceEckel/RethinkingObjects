@@ -39,7 +39,7 @@ exclude = [
 ]
 
 [tool.ruff]
-exclude = ["untouch.py"]
+exclude = ["remove_blanks.py"]
 # Assume Python 3.11:
 target-version = "py311"
 # Set max line length
