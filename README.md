@@ -3,6 +3,8 @@
 Code examples from my ***Rethinking Objects*** presentation at
 PyCon 2023 in Salt Lake City.
 
+- [Presentation on Youtube](https://youtu.be/2Ul6WlKPcgY?si=iS4KfPKR7iPZwvcH)
+
 The (Google) slides for the presentation are
 [here](https://docs.google.com/presentation/d/1U0Mw4Aaz6mf5KpS-mZqKlK1H2_8JxXO6VF4axk9OPXY/edit?usp=sharing).
 
